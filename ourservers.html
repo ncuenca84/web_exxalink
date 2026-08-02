@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+<title>Exxalink S.A.S.</title>
+
+<!-- Enlace al favicon -->
+<link rel="icon" type="image/png" href="favicon.png">
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-slider.min.css">
+<link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
+<link rel="stylesheet" type="text/css" href="css/slick.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
+
+<body>
+
+<div id="header-container"></div>
+
+<script>
+fetch("header.html")
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById("header-container").innerHTML = html;
+
+    // CONFIGURACIÓN POR PÁGINA
+    document.getElementById("page-title").innerText = "Nuestros Servicios";
+    document.getElementById("page-icon-img").src = "images/server.svg";
+  });
+</script>
+<div id="ifeatures" class="container-fluid sfeatures">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row-title">Principales Servicios</div>
+                <div class="row-subtitle"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <img src="images/sfeature1.png" alt="">
+                    </div>
+                    <div class="feature-title">Sistemas de Respaldo</div>
+                    <div class="feature-details">Nuestros sistemas de respaldo garantizan la seguridad y disponibilidad de tus datos, con copias de seguridad automáticas y recuperación rápida en caso de fallos.</div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <img src="images/sfeature2.png" alt="">
+                    </div>
+                    <div class="feature-title">Software como Servicio (SaaS)</div>
+                    <div class="feature-details">Ofrecemos soluciones SaaS para que puedas acceder a las mejores aplicaciones empresariales sin necesidad de instalaciones complicadas ni mantenimientos costosos.</div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <img src="images/sfeature3.png" alt="">
+                    </div>
+                    <div class="feature-title">Infraestructura en la Nube</div>
+                    <div class="feature-details">Nuestra infraestructura en la nube permite escalabilidad y flexibilidad, asegurando que tus recursos tecnológicos puedan crecer con tu negocio.</div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <img src="images/sfeature4.png" alt="">
+                    </div>
+                    <div class="feature-title">Seguridad en la Nube</div>
+                    <div class="feature-details">Implementamos las mejores prácticas de seguridad en la nube para proteger tus datos y mantener la integridad de tus comunicaciones.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="serverslocation" class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row-title">Ubicaciones de los Centros de Datos</div>
+                <div class="row-subtitle"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="serversmap-holder">
+                    <div id="serversmap" class="st">
+                        <img src="images/worldmap.png" alt="">
+                        <div class="servers-location-holder"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="more-info" class="container-fluid">
+    <div class="bg-custom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="links-holder">
+                    <ul>
+                        <li><div class="info-link opened" data-id="1">Nuestra Misión</div></li>
+                        <li><div class="info-link" data-id="2">Nuestra Visión</div></li>
+                        <li><div class="info-link" data-id="3">Compromiso Exxalink</div></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="info-details-holder">
+                    <div class="info-details info-d1 show-details">
+                        <h1>Crear un espacio<br>para la creatividad.</h1>
+                        <p>En Exxalink S.A.S. nos esforzamos por crear un entorno en el que la creatividad pueda florecer. Nos dedicamos a proporcionar soluciones tecnológicas que permitan a nuestros clientes concentrarse en lo que hacen mejor.</p>
+                    </div>
+                    <div class="info-details info-d2">
+                        <h1>Exxalink siempre se sentirá<br>como en casa.</h1>
+                        <p>Nuestros servicios están diseñados para ser intuitivos y accesibles, proporcionando una experiencia de usuario que haga que nuestros clientes se sientan cómodos y seguros.</p>
+                    </div>
+                    <div class="info-details info-d3">
+                        <h1>Precios asequibles<br>hechos fáciles.</h1>
+                        <p>En Exxalink S.A.S., ofrecemos soluciones rentables y transparentes, asegurando que nuestros clientes obtengan el mejor valor por su inversión.</p>
+                    </div>       
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="message1" class="container-fluid message-area normal-bg boxed">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="text-other-color1">¿Estás listo?</div>
+                <div class="text-other-color2">Crea una cuenta, o contáctanos.</div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="buttons-holder">
+                    <a href="https://my.exxalink.com/index.php?rp=/login" class="ybtn ybtn-accent-color">Crear tu Cuenta</a><a href="contact.html" class="ybtn ybtn-white ybtn-shadow">Contáctanos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer-container"></div>
+
+<script>
+fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("footer-container").innerHTML = data;
+    });
+</script>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-slider.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

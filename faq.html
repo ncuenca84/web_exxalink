@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+<title>Hostify</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-slider.min.css">
+<link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
+<link rel="stylesheet" type="text/css" href="css/slick.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
+
+<body>
+
+<div id="header-container"></div>
+
+<script>
+fetch("header.html")
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById("header-container").innerHTML = html;
+
+    // CONFIGURACIÓN POR PÁGINA
+    document.getElementById("page-title").innerText = "Preguntas Frecuentes";
+    document.getElementById("page-icon-img").src = "images/pricing1.svg";
+  });
+</script>
+
+<div id="page-content" class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="content-holder">
+                    <h4>¿Cuál es la diferencia entre hosting compartido y VPS?</h4>
+                    <p>En el hosting compartido, varios sitios web comparten los recursos de un mismo servidor. En un VPS, los recursos son asignados específicamente a tu servidor virtual, brindando más control y rendimiento.</p>
+
+                    <h4>¿Cómo puedo migrar mi sitio web a su hosting?</h4>
+                    <p>Ofrecemos migración gratuita de tu sitio web desde tu proveedor actual. Solo necesitamos acceso a tu cuenta anterior para realizar el traslado.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+  <div class="col-xs-12 col-md-12">
+    <div class="content-holder">
+      <h4>¿Qué tipo de soporte técnico ofrecen?</h4>
+      <p>Brindamos soporte técnico especializado 24/7 a través de chat, correo electrónico y tickets.</p>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-12">
+    <div class="content-holder">
+      <h4>¿Puedo elegir el sistema operativo en mi VPS?</h4>
+      <p>Sí, puedes instalar el sistema operativo que prefieras, como Linux o Windows.</p>
+    </div>
+  </div>
+</div>
+        <div class="row">
+  <div class="col-xs-12 col-md-12">
+    <div class="content-holder">
+      <h4>¿Qué nivel de control tengo sobre mi VPS?</h4>
+      <p>Tienes acceso root (administrador) completo para configurar el servidor según tus necesidades.</p>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-12">
+    <div class="content-holder">
+      <h4>¿Cómo puedo instalar Moodle en mi hosting o VPS?</h4>
+      <p>Nosotros podemos instalar Moodle por ti en cualquiera de nuestros planes de hosting o VPS. También puedes hacerlo tú mismo utilizando un instalador automático como Softaculous.</p>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-12">
+    <div class="content-holder">
+      <h4>¿Ofrecen soporte para la personalización de Moodle?</h4>
+      <p>Sí, ofrecemos soporte técnico para personalización, configuración y mantenimiento de Moodle.</p>
+    </div>
+  </div>
+</div>
+
+   <div class="row">
+  <div class="col-xs-12 col-md-12">
+    <div class="content-holder">
+      <h4>¿Qué beneficios tiene un servidor dedicado frente a un VPS?</h4>
+      <p>Un servidor dedicado ofrece mayor capacidad de recursos y control total, ideal para aplicaciones que requieren un rendimiento y seguridad elevados.</p>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-12">
+    <div class="content-holder">
+      <h4>¿Qué tipo de protección contra ataques DDoS ofrecen en los servidores dedicados?</h4>
+      <p>Todos nuestros servidores dedicados incluyen protección avanzada contra ataques DDoS.</p>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-12">
+    <div class="content-holder">
+      <h4>¿Qué es un certificado SSL?</h4>
+      <p>Un certificado SSL cifra la conexión entre el servidor y el navegador del usuario, asegurando que los datos transmitidos estén protegidos.</p>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-12">
+    <div class="content-holder">
+      <h4>¿Cuáles son los diferentes tipos de certificados SSL que ofrecen?</h4>
+      <p>Ofrecemos certificados SSL básicos, de validación extendida (EV) y comodines (Wildcard SSL) para múltiples subdominios.</p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div id="footer-container"></div>
+
+<script>
+fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("footer-container").innerHTML = data;
+    });
+</script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-slider.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

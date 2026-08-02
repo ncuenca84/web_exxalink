@@ -1,0 +1,11 @@
+# Credenciales reales del sistema de certificados (NO versionar).
+certificados/config.php
+
+# Logs de PHP / servidor.
+error_log
+**/error_log
+*.log
+
+# Archivos temporales del sistema.
+.DS_Store
+Thumbs.db

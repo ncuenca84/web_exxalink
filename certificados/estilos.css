@@ -1,0 +1,51 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h2 {
+    color: #1da1f2;
+    text-align: center;
+}
+input[type=text], input[type=date], input[type=password] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+button {
+    background: #1da1f2;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+button:hover { background: #1380b8; }
+.logo {
+    display: block;
+    margin: 0 auto 20px auto;
+    max-width: 150px;
+}
+.valid { color: #1da1f2; font-weight: bold; }
+.invalid { color: red; font-weight: bold; }
+a { color: #1da1f2; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Utilidades (compatibles con CSP style-src 'self') */
+.qr-preview { text-align: center; }
+.qr-preview img { max-width: 180px; height: auto; }
+table.cert-list { width: 100%; border-collapse: collapse; margin-top: 10px; }
+table.cert-list th,
+table.cert-list td { text-align: left; padding: 6px 8px; border-bottom: 1px solid #eee; }

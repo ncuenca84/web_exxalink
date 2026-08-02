@@ -1,0 +1,485 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+<title>Exxalink S.A.S.</title>
+
+<!-- Enlace al favicon -->
+<link rel="icon" type="image/png" href="favicon.png">
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-slider.min.css">
+<link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
+<link rel="stylesheet" type="text/css" href="css/slick.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
+
+<body>
+
+<div id="header-container"></div>
+
+<script>
+fetch("header.html")
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById("header-container").innerHTML = html;
+
+    // CONFIGURACIÓN POR PÁGINA
+    document.getElementById("page-title").innerText = "VPS Hosting";
+    document.getElementById("page-icon-img").src = "images/service-icon4.svg";
+  });
+</script>
+
+
+<div id="h-info" class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="info-text grey-text">Nuestros servidores VPS te ofrecen la flexibilidad y control que necesitas para gestionar tu propio entorno de hosting. Disfruta de recursos dedicados, rendimiento mejorado y escalabilidad a medida que tu negocio crece.</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="pricing" class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="pricing-box pricing-box-simple pricing-color1">
+                    <div class="pricing-content">
+                        <div class="pricing-head">
+                            <div class="pricing-title">Plan VPS Básico</div>
+                            <div class="pricing-features">
+                                <ul>
+                                    <li>Ideal para proyectos pequeños</li>
+                                    <li>Recursos dedicados</li>
+                                    <li>Fácil escalabilidad</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-options">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a data-toggle="tab" href="#monthly1">Mensual</a></li>
+                                    <li><a data-toggle="tab" href="#annualy1">Anual</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="monthly1" class="tab-pane fade in active">
+                                        <div class="pricing-price">$10</div>
+                                        <div class="billing-cycle">por mes</div>
+                                    </div>
+                                    <div id="annualy1" class="tab-pane fade">
+                                        <div class="pricing-price">$96</div>
+                                        <div class="billing-cycle">por año</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pricing-details">
+                            <ul>
+                                <li>vCPU (3 cores)</li>
+                                <li>4 GB RAM</li>
+                                <li>50 GB 100% NVMe</li>
+                                <li>100 Mbit/s port / UNLIMITED Traffic</li>
+                                <li>Linux o Windows</li>
+                                <li>licencia windows (Costo adicional)</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-link">
+                            <a class="ybtn" href="https://my.exxalink.com/index.php?rp=/store/servidores-virtuales-vps/vps-basico">Pedir Ahora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="pricing-box pricing-box-simple pricing-color2 bestbuy">
+                    <div class="pricing-content">
+                        <div class="pricing-head">
+                            <div class="pricing-title">Plan VPS Profesional</div>
+                            <div class="pricing-features">
+                                <ul>
+                                    <li>Para sitios web medianos</li>
+                                    <li>Recursos dedicados</li>
+                                    <li>Escalabilidad avanzada</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-options">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a data-toggle="tab" href="#monthly2">Mensual</a></li>
+                                    <li><a data-toggle="tab" href="#annualy2">Anual</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="monthly2" class="tab-pane fade in active">
+                                        <div class="pricing-price">$15</div>
+                                        <div class="billing-cycle">por mes</div>
+                                    </div>
+                                    <div id="annualy2" class="tab-pane fade">
+                                        <div class="pricing-price">$144</div>
+                                        <div class="billing-cycle">por año</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pricing-details">
+                            <ul>
+                                <li>vCPU (4 cores)</li>
+                                <li>8 GB RAM</li>
+                                <li>100 GB 100% NVMe</li>
+                                <li>200 Mbit/s port / UNLIMITED Traffic</li>
+                                <li>Linux o Windows</li>
+                                <li>licencia windows (Costo adicional)</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-link">
+                            <a class="ybtn" href="https://my.exxalink.com/index.php?rp=/store/servidores-virtuales-vps/vps-profesional">Pedir Ahora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="pricing-box pricing-box-simple pricing-color3">
+                    <div class="pricing-content">
+                        <div class="pricing-head">
+                            <div class="pricing-title">Plan VPS Avanzado</div>
+                            <div class="pricing-features">
+                                <ul>
+                                    <li>Para proyectos grandes</li>
+                                    <li>Máxima flexibilidad</li>
+                                    <li>Recursos dedicados</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-options">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a data-toggle="tab" href="#monthly3">Mensual</a></li>
+                                    <li><a data-toggle="tab" href="#annualy3">Anual</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="monthly3" class="tab-pane fade in active">
+                                        <div class="pricing-price">$25</div>
+                                        <div class="billing-cycle">por mes</div>
+                                    </div>
+                                    <div id="annualy3" class="tab-pane fade">
+                                        <div class="pricing-price">$264</div>
+                                        <div class="billing-cycle">por año</div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="pricing-details">
+                             <ul>
+                                <li>vCPU (6 cores)</li>
+                                <li>12 GB RAM</li>
+                                <li>200 GB 100% NVMe</li>
+                                <li>200 Mbit/s port / UNLIMITED Traffic</li>
+                                <li>Linux o Windows</li>
+                                <li>licencia windows (Costo adicional)</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="pricing-link">
+                            <a class="ybtn" href="https://my.exxalink.com/index.php?rp=/store/servidores-virtuales-vps/vps-avanzado">Pedir Ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="pricing-box pricing-box-simple pricing-color4">
+        <div class="pricing-content">
+            <div class="pricing-head">
+                <div class="pricing-title">Plan VPS Extremo</div>
+                <div class="pricing-features">
+                    <ul>
+                        <li>Para sitios web grandes</li>
+                        <li>Recursos dedicados</li>
+                        <li>Escalabilidad avanzada</li>
+                    </ul>
+                </div>
+                <div class="pricing-options">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#monthly4">Mensual</a></li>
+                        <li><a data-toggle="tab" href="#annualy4">Anual</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="monthly4" class="tab-pane fade in active">
+                            <div class="pricing-price">$40</div>
+                            <div class="billing-cycle">por mes</div>
+                        </div>
+                        <div id="annualy4" class="tab-pane fade">
+                            <div class="pricing-price">$384</div>
+                            <div class="billing-cycle">por año</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pricing-details">
+                <ul>
+                    <li>vCPU (8 cores)</li>
+                    <li>16 GB RAM</li>
+                    <li>300 GB 100% NVMe</li>
+                    <li>200 Mbit/s port / UNLIMITED Traffic</li>
+                    <li>Linux o Windows</li>
+                    <li>licencia windows (Costo adicional)</li>
+                </ul>
+            </div>
+            <div class="pricing-link">
+                <a class="ybtn" href="https://my.exxalink.com/index.php?rp=/store/servidores-virtuales-vps/vps-extremo">Pedir Ahora</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- VPS Ultra -->
+<div class="col-sm-6 col-md-4">
+    <div class="pricing-box pricing-box-simple pricing-color5">
+        <div class="pricing-content">
+            <div class="pricing-head">
+                <div class="pricing-title">Plan VPS Ultra</div>
+                <div class="pricing-features">
+                    <ul>
+                        <li>Para sitios web grandes</li>
+                        <li>Recursos dedicados</li>
+                        <li>Escalabilidad avanzada</li>
+                    </ul>
+                </div>
+                <div class="pricing-options">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#monthly5">Mensual</a></li>
+                        <li><a data-toggle="tab" href="#annualy5">Anual</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="monthly5" class="tab-pane fade in active">
+                            <div class="pricing-price">$70</div>
+                            <div class="billing-cycle">por mes</div>
+                        </div>
+                        <div id="annualy5" class="tab-pane fade">
+                            <div class="pricing-price">$744</div>
+                            <div class="billing-cycle">por año</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pricing-details">
+                <ul>
+                    <li>vCPU (10 cores)</li>
+                    <li>32 GB RAM</li>
+                    <li>500 GB 100% NVMe</li>
+                    <li>200 Mbit/s port / UNLIMITED Traffic</li>
+                    <li>Linux o Windows</li>
+                    <li>licencia windows (Costo adicional)</li>
+                </ul>
+            </div>
+            <div class="pricing-link">
+                <a class="ybtn" href="https://my.exxalink.com/index.php?rp=/store/servidores-virtuales-vps/vps-ultra">Pedir Ahora</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="ifeatures" class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row-title">¿Qué nos hace especiales?</div>
+                <div class="row-subtitle">Descubre las características que nos distinguen.</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <img src="images/feature1.png" alt="">
+                    </div>
+                    <div class="feature-title">Rendimiento Superior</div>
+                    <div class="feature-details">Nuestros VPS ofrecen un rendimiento superior con recursos dedicados que garantizan una alta disponibilidad y velocidad.</div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <img src="images/feature2.png" alt="">
+                    </div>
+                    <div class="feature-title">Escalabilidad Fácil</div>
+                    <div class="feature-details">Escala tus recursos fácilmente a medida que tu proyecto crece, sin tiempos de inactividad ni complicaciones.</div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <img src="images/feature3.png" alt="">
+                    </div>
+                    <div class="feature-title">Seguridad Avanzada</div>
+                    <div class="feature-details">Protege tus datos con nuestras avanzadas medidas de seguridad, incluyendo encriptación y protección DDoS.</div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <img src="images/feature4.png" alt="">
+                    </div>
+                    <div class="feature-title">Soporte 24/7</div>
+                    <div class="feature-details">Nuestro equipo de soporte está disponible las 24 horas del día, los 7 días de la semana, para ayudarte con cualquier problema o pregunta.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="apps" class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row-icon"><img src="images/click-icon.png"></div>
+                <div class="row-title">Aplicaciones de un Clic</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="apps-holder">
+                    <div class="apps-links-holder">
+                        <div class="app-icon-holder app-icon-holder1 opened" data-id="1">
+                            <div class="app-icon"><img class="grayscale" src="images/wordpress.png" alt="wordpress"></div>
+                        </div>
+                        <div class="app-icon-holder app-icon-holder2" data-id="2">
+                            <div class="app-icon"><img class="brightness" src="images/joomla.png" alt="joomla"></div>
+                        </div>
+                        <div class="app-icon-holder app-icon-holder3" data-id="3">
+                            <div class="app-icon"><img class="grayscale" src="images/drupal.png" alt="drupal"></div>
+                        </div>
+                        <div class="app-icon-holder app-icon-holder4" data-id="4">
+                            <div class="app-icon"><img class="brightness" src="images/magento.png" alt="magento"></div>
+                        </div>
+                    </div>
+                    <div class="apps-details-holder">
+                        <div class="app-details">
+                            <div class="app-details1 show-details">
+                                <div class="col-md-5">
+                                    <div class="img-holder">
+                                        <img src="images/wordpress-preview.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="app-title">Hosting de Wordpress</div>
+                                    <div class="app-text">Ofrecemos hosting optimizado para WordPress, asegurando una rápida y segura experiencia de usuario.</div>
+                                    <div class="app-link">
+                                        <a href="contact.html" class="ybtn ybtn-white ybtn-shadow">Saber más</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-details2">
+                                <div class="col-md-5">
+                                    <div class="img-holder">
+                                        <img src="images/joomla-preview.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="app-title">Hosting de Joomla</div>
+                                    <div class="app-text">Hosting ideal para sitios creados con Joomla, con excelente rendimiento y soporte especializado.</div>
+                                    <div class="app-link">
+                                        <a href="contact.html" class="ybtn ybtn-white ybtn-shadow">Saber más</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-details3">
+                                <div class="col-md-5">
+                                    <div class="img-holder">
+                                        <img src="images/drupal-preview.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="app-title">Hosting de Drupal</div>
+                                    <div class="app-text">Soluciones de hosting optimizadas para Drupal, ofreciendo seguridad y alta disponibilidad.</div>
+                                    <div class="app-link">
+                                        <a href="contact.html" class="ybtn ybtn-white ybtn-shadow">Saber más</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-details4">
+                                <div class="col-md-5">
+                                    <div class="img-holder">
+                                        <img src="images/magento-preview.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="app-title">Hosting de Magento</div>
+                                    <div class="app-text">Optimizado para Magento, nuestro hosting asegura una experiencia de compra rápida y segura.</div>
+                                    <div class="app-link">
+                                        <a href="contact.html" class="ybtn ybtn-white ybtn-shadow">Saber más</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="more-features" class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row-title">Nuestra Promesa</div>
+                <div class="row-subtitle">Comprometidos con tu satisfacción</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="mfeature-box">
+                    <div class="mfeature-icon">
+                        <i class="htfy htfy-trophy"></i>
+                    </div>
+                    <div class="mfeature-title">%99.9 Uptime</div>
+                    <div class="mfeature-details">Garantizamos un tiempo de actividad del 99.9% para que tu sitio web siempre esté disponible.</div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="mfeature-box">
+                    <div class="mfeature-icon">
+                        <i class="htfy htfy-like"></i>
+                    </div>
+                    <div class="mfeature-title">Garantía de Devolución de Dinero</div>
+                    <div class="mfeature-details">Si no estás satisfecho con nuestro servicio, te ofrecemos una garantía de devolución de dinero.</div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="mfeature-box">
+                    <div class="mfeature-icon">
+                        <i class="htfy htfy-cogwheel"></i>
+                    </div>
+                    <div class="mfeature-title">Mejor Soporte</div>
+                    <div class="mfeature-details">Nuestro equipo de soporte está disponible 24/7 para asistirte con cualquier problema o consulta.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="message1" class="container-fluid message-area normal-bg boxed">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="text-other-color1">¿Estás listo?</div>
+                <div class="text-other-color2">Crea una cuenta, o contáctanos.</div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="buttons-holder">
+                    <a href="https://my.exxalink.com/index.php?rp=/login" lass="ybtn ybtn-accent-color">Crear tu Cuenta</a><a href="contact.html" class="ybtn ybtn-white ybtn-shadow">Contáctanos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="footer-container"></div>
+
+<script>
+fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("footer-container").innerHTML = data;
+    });
+</script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-slider.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

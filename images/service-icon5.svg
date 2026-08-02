@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 128 128"
+     width="128" height="128">
+
+  <!-- Fondo -->
+  <rect width="128" height="128" rx="16" fill="#06D3D8"/>
+
+  <!-- Cabeza -->
+  <circle cx="64" cy="38" r="20" fill="#FFFFFF"/>
+
+  <!-- Torso -->
+  <path
+    d="M32 92
+       C32 70, 96 70, 96 92
+       Z"
+    fill="#FFFFFF"/>
+
+  <!-- Detalle curvo del hombro -->
+  <path
+    d="M78 70
+       C86 78, 86 86, 78 94"
+    fill="none"
+    stroke="#06D3D8"
+    stroke-width="6"
+    stroke-linecap="round"/>
+</svg>

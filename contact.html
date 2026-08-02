@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+<title>Exxalink S.A.S.</title>
+
+<!-- Enlace al favicon -->
+<link rel="icon" type="image/png" href="favicon.png">
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-slider.min.css">
+<link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
+<link rel="stylesheet" type="text/css" href="css/slick.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
+
+<body>
+
+<div id="header-container"></div>
+
+<script>
+fetch("header.html")
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById("header-container").innerHTML = html;
+
+    // CONFIGURACIÓN POR PÁGINA
+    document.getElementById("page-title").innerText = "Contáctanos";
+    document.getElementById("page-icon-img").src = "images/contacto.svg";
+  });
+</script>
+
+    <div id="page-head" class="container-fluid inner-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="page-title">Contáctanos</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="row-title">Estamos aquí para ayudarte con cualquier pregunta o consulta que puedas tener.<br>
+Puedes contactarnos a través de los siguientes medios:</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="contact-info" class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row-title">¿Qué nos hace especiales?</div>
+                <div class="row-subtitle"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="info-box">
+                    <div class="info-title phone-icon">Teléfono</div>
+                    <div class="info-details"><p>Atención al cliente 24/7
+                    Llámanos al <a href="tel:0984853489">0984853489</a> / <a href="tel:025172445">025172445</a></p>
+
+                    <p>Disfruta de una consulta gratuita con los mejores expertos web de Exxalink S.A.S.</p></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info-box">
+                    <div class="info-title chat-icon">Chatea con nosotros</div>
+                    <div class="info-details"><p>Estamos listos para responder cualquier pregunta.</p>
+
+                    <p>Empieza a chatear con nuestro representante haciendo clic en el icono de chat</p></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info-box">
+                    <div class="info-title location-icon">Visítanos</div>
+                    <div class="info-details"><p>Nos encontramos en El Espectador y Últimas Noticias, Quito, Ecuador.
+                    ¡Ven y disfruta de una taza de café!</p>
+
+                    <p>Dirección: El Espectador y Últimas Noticias</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="extra-info" class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="text-holder">
+                    <h1>¿Listo? Decidamos<br>
+un nombre de dominio.</h1>
+                    <p>Explora nuestras opciones y elige el mejor nombre de dominio para tu sitio web.</p>
+                </div>
+            </div>
+            <div class="col-md-6 link-holder">
+                <div class="tld-graphic">
+                    <div>.com</div>
+                    <div>.net</div>
+                    <div>.org</div>
+                </div>
+                <a href="domains.html" class="ybtn ybtn-header-color">Lista de nombres de dominio</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="message1" class="container-fluid message-area normal-bg boxed">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="text-other-color1">¿Estás listo?</div>
+                <div class="text-other-color2">Crea una cuenta, o contáctanos.</div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="buttons-holder">
+                    <a href="my.exxalink.com/index.php?rp=/login" class="ybtn ybtn-accent-color">Crear tu Cuenta</a><a href="contact.html" class="ybtn ybtn-white ybtn-shadow">Contáctanos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer-container"></div>
+
+<script>
+fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("footer-container").innerHTML = data;
+    });
+</script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-slider.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
