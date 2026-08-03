@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /certificados/admin/
+Disallow: /certificados/tools/
+Disallow: /certificados/includes/
+
+Sitemap: https://exxalink.com/sitemap.xml
