@@ -102,51 +102,54 @@ if ($rs) {
 <link rel="stylesheet" href="../estilos.css">
 </head>
 <body>
-<div class="container">
-    <img src="../assets/logo_exxalink.png" class="logo" alt="Exxalink S.A.S.">
-    <h2>Registrar Nuevo Certificado</h2>
+<main class="container container--wide">
+    <div class="toolbar">
+        <h2>Registrar Nuevo Certificado</h2>
+        <a href="logout.php" class="link-logout">Cerrar sesión ↪</a>
+    </div>
 
     <?php if ($msg !== ''): ?>
-        <p class="<?= e($msgTipo) ?>"><?= e($msg) ?></p>
+        <div class="alert <?= $msgTipo === 'valid' ? 'alert--ok' : 'alert--bad' ?>"><?= e($msg) ?></div>
     <?php endif; ?>
 
     <?php if ($codigoGenerado !== ''): ?>
-        <p class="qr-preview">
-            <img src="../qrs/<?= e($codigoGenerado) ?>.png" alt="QR del certificado <?= e($codigoGenerado) ?>">
-        </p>
+        <div class="qr-preview">
+            <img src="../qrs/<?= e($codigoGenerado) ?>.png" alt="Código QR del certificado <?= e($codigoGenerado) ?>">
+        </div>
     <?php endif; ?>
 
-    <form method="post" autocomplete="off">
+    <form method="post" autocomplete="off" class="field-group">
         <?= csrf_input() ?>
-        <input type="text" name="nombre" placeholder="Nombre completo" maxlength="100" required>
-        <input type="text" name="curso" placeholder="Curso o capacitación" maxlength="150" required>
-        <input type="date" name="fecha" required>
-        <button type="submit">Registrar y Generar QR</button>
+        <input type="text" name="nombre" placeholder="Nombre completo" maxlength="100" required aria-label="Nombre completo">
+        <input type="text" name="curso" placeholder="Curso o capacitación" maxlength="150" required aria-label="Curso o capacitación">
+        <input type="date" name="fecha" required aria-label="Fecha de emisión">
+        <button type="submit" class="btn--block">Registrar y Generar QR</button>
     </form>
 
     <?php if (!empty($ultimos)): ?>
-        <h2>Últimos certificados</h2>
-        <table class="cert-list">
-            <thead>
-                <tr>
-                    <th>Código</th>
-                    <th>Nombre</th>
-                    <th>Fecha</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($ultimos as $u): ?>
-                <tr>
-                    <td><?= e($u['codigo']) ?></td>
-                    <td><?= e($u['nombre']) ?></td>
-                    <td><?= e($u['fecha_emision']) ?></td>
-                </tr>
-            <?php endforeach; ?>
-            </tbody>
-        </table>
+        <h2 class="section-title">Últimos certificados</h2>
+        <div class="table-wrap">
+            <table class="cert-list">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($ultimos as $u): ?>
+                    <tr>
+                        <td><?= e($u['codigo']) ?></td>
+                        <td><?= e($u['nombre']) ?></td>
+                        <td><?= e($u['fecha_emision']) ?></td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
     <?php endif; ?>
-
-    <p><a href="logout.php">Cerrar sesión</a></p>
-</div>
+</main>
+<footer class="page-footer">Panel administrativo · Exxalink S.A.S.</footer>
 </body>
 </html>

@@ -37,27 +37,37 @@ if ($codigo !== '') {
 <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-<div class="container">
+<main class="container">
     <img src="assets/logo_exxalink.png" class="logo" alt="Exxalink S.A.S.">
-    <h2>Verificación de Certificado</h2>
+    <h1>Verificación de Certificado</h1>
+    <p class="subtitle">Confirme la autenticidad de un certificado emitido por Exxalink S.A.S.</p>
 
-    <form method="get" autocomplete="off">
+    <form method="get" autocomplete="off" class="search">
         <input type="text" name="codigo" placeholder="Ingrese el código del certificado"
-               value="<?= e($codigo) ?>" maxlength="60" required>
+               value="<?= e($codigo) ?>" maxlength="60" required aria-label="Código del certificado">
         <button type="submit">Verificar</button>
     </form>
 
 <?php if ($buscado): ?>
     <?php if ($certificado !== null): ?>
-        <p class="valid">✅ Certificado válido</p>
-        <p><strong>Nombre:</strong> <?= e($certificado['nombre']) ?></p>
-        <p><strong>Curso:</strong> <?= e($certificado['curso']) ?></p>
-        <p><strong>Fecha de emisión:</strong> <?= e($certificado['fecha_emision']) ?></p>
-        <p>Emitido por: <strong>Exxalink S.A.S.</strong></p>
+        <div class="result result--ok">
+            <span class="badge badge--ok">✔ Certificado válido</span>
+            <dl class="cert-details">
+                <div class="row"><dt>Nombre</dt><dd><?= e($certificado['nombre']) ?></dd></div>
+                <div class="row"><dt>Curso</dt><dd><?= e($certificado['curso']) ?></dd></div>
+                <div class="row"><dt>Fecha de emisión</dt><dd><?= e($certificado['fecha_emision']) ?></dd></div>
+                <div class="row"><dt>Código</dt><dd><?= e($codigo) ?></dd></div>
+            </dl>
+            <p class="issuer">Emitido por <strong>Exxalink S.A.S.</strong></p>
+        </div>
     <?php else: ?>
-        <p class="invalid">❌ Certificado no válido</p>
+        <div class="result result--bad">
+            <span class="badge badge--bad">✕ Certificado no válido</span>
+            <p class="muted">No encontramos ningún certificado con ese código. Verifíquelo e intente nuevamente.</p>
+        </div>
     <?php endif; ?>
 <?php endif; ?>
-</div>
+</main>
+<footer class="page-footer">Sistema de verificación de certificados · Exxalink S.A.S.</footer>
 </body>
 </html>

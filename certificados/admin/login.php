@@ -83,20 +83,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <link rel="stylesheet" href="../estilos.css">
 </head>
 <body>
-<div class="container">
+<main class="container">
     <img src="../assets/logo_exxalink.png" class="logo" alt="Exxalink S.A.S.">
-    <h2>Acceso Administrativo</h2>
+    <h1>Acceso Administrativo</h1>
+    <p class="subtitle">Ingrese sus credenciales para gestionar certificados.</p>
 
     <?php if ($error !== ''): ?>
-        <p class="invalid"><?= e($error) ?></p>
+        <div class="alert alert--bad"><?= e($error) ?></div>
     <?php endif; ?>
 
-    <form method="post" autocomplete="off">
+    <form method="post" autocomplete="off" class="field-group">
         <?= csrf_input() ?>
-        <input type="text" name="usuario" placeholder="Usuario" required autofocus>
-        <input type="password" name="clave" placeholder="Contraseña" required>
-        <button type="submit">Ingresar</button>
+        <input type="text" name="usuario" placeholder="Usuario" required autofocus aria-label="Usuario">
+        <input type="password" name="clave" placeholder="Contraseña" required aria-label="Contraseña">
+        <button type="submit" class="btn--block">Ingresar</button>
     </form>
-</div>
+</main>
+<footer class="page-footer">Panel administrativo · Exxalink S.A.S.</footer>
 </body>
 </html>
