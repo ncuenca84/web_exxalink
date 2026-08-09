@@ -152,9 +152,11 @@ body{
 .mfeature-title{ font-weight:700 !important; color:var(--exa-ink) !important; }
 .mfeature-details{ color:var(--exa-muted) !important; }
 
-/* ---------- Banda CTA (tarjeta clara: texto oscuro legible) ---------- */
-#message2 .text-other-color1{ color:var(--exa-muted) !important; font-weight:600 !important; }
-#message2 .text-other-color2{ color:var(--exa-ink) !important; font-weight:800 !important; }
+/* ---------- Banda CTA (tarjeta clara: texto oscuro legible) ----------
+   Cubre TODAS las secciones .message-area (#message1, #message2, ...) que
+   usan fondo claro (normal-bg), en todas las páginas. */
+.message-area .text-other-color1{ color:var(--exa-muted) !important; font-weight:600 !important; }
+.message-area .text-other-color2{ color:var(--exa-ink) !important; font-weight:800 !important; }
 
 /* ---------- Navbar: botones ---------- */
 .login-button{
