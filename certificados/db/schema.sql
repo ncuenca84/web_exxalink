@@ -1,6 +1,13 @@
 -- Esquema del sistema de certificados — Exxalink S.A.S.
--- Ejecutar en la base de datos `exxa_certificados`.
+-- Referencia del esquema completo de la base `exxa_certificados`.
+--
+-- NOTA: la base y la tabla `certificados` YA EXISTEN en producción con datos.
+-- Este archivo es idempotente (CREATE TABLE IF NOT EXISTS, sin DROP ni ALTER):
+-- ejecutarlo NO altera ni borra la tabla `certificados` existente.
+-- Para una instalación ya en marcha basta con crear la tabla `usuarios`
+-- (ver db/usuarios.sql), que es lo único nuevo.
 
+-- Tabla de certificados (solo se crea si no existiera; no toca la actual).
 CREATE TABLE IF NOT EXISTS certificados (
     id            INT AUTO_INCREMENT PRIMARY KEY,
     codigo        VARCHAR(50)  NOT NULL UNIQUE,

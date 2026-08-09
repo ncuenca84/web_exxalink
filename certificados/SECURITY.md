@@ -38,15 +38,20 @@ cp config.example.php config.php
 El login ya no usa credenciales fijas en el código, sino la tabla `usuarios`
 con contraseñas cifradas (`password_hash`).
 
+> La base `exxa_certificados` y la tabla `certificados` **ya existen con sus
+> datos**: no hay que recrearlas. Lo único nuevo es la tabla `usuarios`.
+
 ```bash
-# 1) Crear las tablas (una sola vez):
-mysql -u exxa_certificados -p exxa_certificados < db/schema.sql
+# 1) Crear SOLO la tabla nueva de usuarios (no toca `certificados`):
+mysql -u exxa_certificados -p exxa_certificados < db/usuarios.sql
 
 # 2) Crear el administrador (contraseña de 10+ caracteres):
 php tools/crear_admin.php admin 'UNA_CLAVE_FUERTE_NUEVA'
 ```
 
 `crear_admin.php` solo se ejecuta por línea de comandos (bloqueado por web).
+(`db/schema.sql` contiene el esquema completo por referencia y es idempotente,
+pero para una base ya en marcha basta con `db/usuarios.sql`.)
 
 ---
 
