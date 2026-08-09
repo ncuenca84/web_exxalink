@@ -164,11 +164,19 @@ body{
   border:1px solid rgba(255,255,255,.5) !important;
   padding:8px 20px !important;
 }
+/* Botón Soporte: sólido para que resalte sobre la cabecera azul
+   (antes su degradado empezaba en el mismo azul y se fundía con el fondo). */
 .support-button{
   border-radius:999px !important;
-  background:linear-gradient(135deg,var(--exa-primary),var(--exa-accent)) !important;
-  padding:8px 22px !important;
+  background:#ffffff !important;
+  color:var(--exa-primary) !important;
+  padding:8px 24px !important;
+  box-shadow:0 6px 16px rgba(0,0,0,.18) !important;
 }
+.support-button:hover{ background:#f2f7ff !important; color:var(--exa-primary-d) !important; }
+/* Alinear "Soporte" con "Iniciar Sesión" (su contenedor lo empujaba abajo) */
+#nav .support-button-holder{ margin-top:0 !important; padding-top:0 !important; }
+#nav .login-button, #nav .support-button{ vertical-align:middle !important; margin-top:0 !important; }
 
 /* ---------- Accesibilidad ---------- */
 a:focus-visible,.ybtn:focus-visible,button:focus-visible{
