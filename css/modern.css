@@ -130,12 +130,12 @@ body{
 .pricing-box.featured:hover{ transform:translateY(-12px); }
 .pricing-box.featured::before{
   content:"MÁS POPULAR";
-  position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+  position:absolute; top:-12px; right:14px;
   background:linear-gradient(135deg,var(--exa-primary),var(--exa-accent));
-  color:#fff; font-size:.68rem; font-weight:700; letter-spacing:.06em;
-  padding:6px 14px; border-radius:999px;
+  color:#fff; font-size:.66rem; font-weight:700; letter-spacing:.06em;
+  padding:6px 13px; border-radius:999px;
   box-shadow:0 8px 18px rgba(24,119,230,.35);
-  white-space:nowrap; z-index:2;
+  white-space:nowrap; z-index:3;
 }
 
 /* ---------- Promesa (more-features) ---------- */
