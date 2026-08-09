@@ -1,0 +1,179 @@
+/* ============================================================
+   Exxalink · Capa de modernización (piloto en la portada)
+   Se carga DESPUÉS del tema; solo refina estética, no estructura.
+   ============================================================ */
+
+:root{
+  --exa-primary:#1877e6;
+  --exa-primary-d:#0d5bc4;
+  --exa-accent:#22d3ee;
+  --exa-ink:#0f1b2d;
+  --exa-muted:#5b6b7f;
+  --exa-radius:18px;
+  --exa-radius-sm:12px;
+  --exa-shadow:0 18px 44px rgba(15,40,80,.12);
+  --exa-shadow-sm:0 8px 24px rgba(15,40,80,.08);
+  --exa-font:"Inter","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+}
+
+body{
+  font-family:var(--exa-font);
+  color:var(--exa-ink);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------- Títulos de sección ---------- */
+.row-title{
+  font-weight:800 !important;
+  letter-spacing:-.02em;
+  color:var(--exa-ink) !important;
+}
+.row-subtitle{ color:var(--exa-muted) !important; }
+/* pequeño acento bajo el título */
+#services .row-title,#pricing .row-title,#features .row-title,
+#more-features .row-title{ position:relative; }
+
+/* ---------- Botones ---------- */
+.ybtn{
+  border-radius:999px !important;
+  font-weight:600 !important;
+  letter-spacing:.01em;
+  padding:14px 30px !important;
+  transition:transform .12s ease, box-shadow .2s ease, filter .2s ease !important;
+  border:none !important;
+}
+.ybtn:hover{ transform:translateY(-2px); filter:brightness(1.04); }
+.ybtn-header-color,.ybtn-accent-color{
+  background-image:linear-gradient(135deg,var(--exa-primary),var(--exa-accent)) !important;
+  color:#fff !important;
+  box-shadow:0 12px 26px rgba(24,119,230,.35) !important;
+}
+.ybtn-white{
+  background:#fff !important;
+  color:var(--exa-primary) !important;
+  box-shadow:var(--exa-shadow-sm) !important;
+}
+
+/* ---------- Hero ---------- */
+.big-title{
+  font-weight:800 !important;
+  letter-spacing:-.025em;
+  line-height:1.08 !important;
+}
+/* Hero en móvil: el tema fija ~426px en el slider. Acotamos los elementos de
+   texto con unidades de viewport (vw) para que nunca desborden, sin depender
+   del contenedor del tema. */
+@media (max-width:575px){
+  body{ overflow-x:hidden; }
+  #top-content .container{ padding-left:22px !important; padding-right:22px !important; }
+  .big-title{ font-size:1.7rem !important; overflow-wrap:anywhere; max-width:88vw !important; }
+  .big-title span{ font-size:1.7rem !important; }
+  #top-content .slide p{ overflow-wrap:anywhere; max-width:86vw !important; }
+  #top-content .btn-holder{ display:flex; flex-wrap:wrap; gap:12px; max-width:88vw !important; }
+  #top-content .btn-holder .ybtn{ margin:0 !important; }
+}
+.big-title span{
+  color:transparent !important;
+  background:linear-gradient(120deg,#bff3ff,#ffffff) !important;
+  -webkit-background-clip:text !important;
+  background-clip:text !important;
+}
+#top-content .noti .badge{
+  background:rgba(255,255,255,.18) !important;
+  border-radius:999px !important;
+}
+
+/* ---------- Tarjetas de servicios ---------- */
+.service-box{
+  background:#fff !important;
+  border:1px solid #eef2f8 !important;
+  border-radius:var(--exa-radius) !important;
+  box-shadow:var(--exa-shadow-sm) !important;
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease !important;
+}
+.service-box:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--exa-shadow) !important;
+  border-color:rgba(24,119,230,.35) !important;
+}
+.service-title a{ color:var(--exa-ink) !important; font-weight:700 !important; }
+.service-title a:hover{ color:var(--exa-primary) !important; }
+.service-details p{ color:var(--exa-muted) !important; }
+
+/* ---------- Precios ---------- */
+.pricing-box{
+  position:relative;
+  border-radius:var(--exa-radius) !important;
+  border:1px solid #e9eef6 !important;
+  box-shadow:var(--exa-shadow-sm) !important;
+  transition:transform .18s ease, box-shadow .18s ease !important;
+  background:#fff !important;
+}
+.pricing-box:hover{ transform:translateY(-6px); box-shadow:var(--exa-shadow) !important; }
+.pricing-title{ font-weight:700 !important; color:var(--exa-ink) !important; }
+.price-title{ color:var(--exa-muted) !important; text-transform:uppercase; letter-spacing:.08em; font-size:.72rem !important; }
+.pricing-price{ color:var(--exa-primary) !important; font-weight:800 !important; }
+.pricing-details p{ color:var(--exa-muted) !important; }
+
+/* Plan destacado */
+.pricing-box.featured{
+  overflow:visible !important;
+  margin-top:16px;
+  border:2px solid transparent !important;
+  background:
+    linear-gradient(#fff,#fff) padding-box,
+    linear-gradient(135deg,var(--exa-primary),var(--exa-accent)) border-box !important;
+  box-shadow:0 24px 50px rgba(24,119,230,.22) !important;
+  transform:translateY(-8px);
+}
+.pricing-box.featured:hover{ transform:translateY(-12px); }
+.pricing-box.featured::before{
+  content:"MÁS POPULAR";
+  position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+  background:linear-gradient(135deg,var(--exa-primary),var(--exa-accent));
+  color:#fff; font-size:.68rem; font-weight:700; letter-spacing:.06em;
+  padding:6px 14px; border-radius:999px;
+  box-shadow:0 8px 18px rgba(24,119,230,.35);
+  white-space:nowrap; z-index:2;
+}
+
+/* ---------- Promesa (more-features) ---------- */
+.mfeature-box{
+  background:#fff;
+  border:1px solid #eef2f8;
+  border-radius:var(--exa-radius);
+  padding:34px 26px;
+  box-shadow:var(--exa-shadow-sm);
+  transition:transform .18s ease, box-shadow .18s ease;
+  text-align:center;
+}
+.mfeature-box:hover{ transform:translateY(-6px); box-shadow:var(--exa-shadow); }
+.mfeature-title{ font-weight:700 !important; color:var(--exa-ink) !important; }
+.mfeature-details{ color:var(--exa-muted) !important; }
+
+/* ---------- Banda CTA ---------- */
+#message2.message-area{
+  background:linear-gradient(135deg,var(--exa-primary),var(--exa-primary-d)) !important;
+}
+#message2 .text-other-color1{ color:rgba(255,255,255,.85) !important; }
+#message2 .text-other-color2{ color:#fff !important; font-weight:800 !important; }
+
+/* ---------- Navbar: botones ---------- */
+.login-button{
+  border-radius:999px !important;
+  border:1px solid rgba(255,255,255,.5) !important;
+  padding:8px 20px !important;
+}
+.support-button{
+  border-radius:999px !important;
+  background:linear-gradient(135deg,var(--exa-primary),var(--exa-accent)) !important;
+  padding:8px 22px !important;
+}
+
+/* ---------- Accesibilidad ---------- */
+a:focus-visible,.ybtn:focus-visible,button:focus-visible{
+  outline:3px solid rgba(34,211,238,.55);
+  outline-offset:2px;
+}
+html{ scroll-behavior:smooth; }
