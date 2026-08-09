@@ -1,3 +1,7 @@
+# Subdominio WHMCS: vive dentro de public_html pero NO forma parte de este
+# proyecto. Se ignora para que 'git pull'/'git status' nunca lo toquen.
+my.exxalink.com/
+
 # Credenciales reales del sistema de certificados (NO versionar).
 certificados/config.php
 
