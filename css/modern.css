@@ -229,6 +229,13 @@ body{
 .pricing-box.pricing-box-simple.pricing-color5 .pricing-content .pricing-link a:focus{ background-color:#4453d4!important; }
 .pricing-box.pricing-box-simple.pricing-color5 .pricing-content .pricing-details ul li:hover{ color:#5566e8!important; }
 
+/* ---------- Filas de planes con más de 3 tarjetas ----------
+   Con floats, las tarjetas que pasan a la 2ª fila se "enganchan" a la derecha
+   por las alturas desiguales. Con flexbox fluyen siempre desde la izquierda. */
+@media (min-width:768px){
+  .plan-cards{ display:flex; flex-wrap:wrap; align-items:flex-start; }
+}
+
 /* ---------- Accesibilidad ---------- */
 a:focus-visible,.ybtn:focus-visible,button:focus-visible{
   outline:3px solid rgba(34,211,238,.55);
