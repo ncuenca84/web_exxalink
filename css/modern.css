@@ -178,6 +178,21 @@ body{
 #nav .support-button-holder{ margin-top:0 !important; padding-top:0 !important; }
 #nav .login-button, #nav .support-button{ vertical-align:middle !important; margin-top:0 !important; }
 
+/* ---------- Header simétrico: logo, menú y botones en una sola línea ----------
+   (solo escritorio; en móvil se mantiene el menú colapsable de Bootstrap) */
+@media (min-width:768px){
+  #header-holder #nav .container-nav > .row{ display:flex !important; align-items:center !important; }
+  #header-holder #nav .container-nav > .row > [class*="col-"]{
+    display:flex !important; align-items:center !important; justify-content:space-between !important; width:100%;
+  }
+  #header-holder #nav .navbar-header{ float:none !important; margin:0 !important; display:flex; align-items:center; }
+  #header-holder #nav .navbar-collapse{ float:none !important; padding:0 !important; height:auto !important; }
+  #header-holder #nav .navbar-nav{ float:none !important; margin:0 !important; display:flex; align-items:center; }
+  #header-holder #nav .navbar-nav > li{ float:none !important; display:flex; align-items:center; }
+  /* Texto del menú más grande */
+  #header-holder #nav .navbar-nav > li > a{ font-size:17px !important; }
+}
+
 /* ---------- Accesibilidad ---------- */
 a:focus-visible,.ybtn:focus-visible,button:focus-visible{
   outline:3px solid rgba(34,211,238,.55);
