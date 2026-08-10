@@ -111,7 +111,9 @@ body{
   background:#fff !important;
 }
 .pricing-box:hover{ transform:translateY(-6px); box-shadow:var(--exa-shadow) !important; }
-.pricing-title{ font-weight:700 !important; color:var(--exa-ink) !important; }
+.pricing-unity .pricing-title{ font-weight:700 !important; color:var(--exa-ink) !important; }
+/* Tarjetas de color (planes): el título va en blanco sobre el gradiente */
+.pricing-box.pricing-box-simple .pricing-content .pricing-title{ color:#ffffff !important; }
 .price-title{ color:var(--exa-muted) !important; text-transform:uppercase; letter-spacing:.08em; font-size:.72rem !important; }
 .pricing-price{ color:var(--exa-primary) !important; font-weight:800 !important; }
 .pricing-details p{ color:var(--exa-muted) !important; }
