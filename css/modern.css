@@ -112,11 +112,12 @@ body{
 }
 .pricing-box:hover{ transform:translateY(-6px); box-shadow:var(--exa-shadow) !important; }
 .pricing-unity .pricing-title{ font-weight:700 !important; color:var(--exa-ink) !important; }
-/* Tarjetas de color (planes): el título va en blanco sobre el gradiente */
+/* Tarjetas de color (planes): título y precio en blanco sobre el gradiente */
 .pricing-box.pricing-box-simple .pricing-content .pricing-title{ color:#ffffff !important; }
-.price-title{ color:var(--exa-muted) !important; text-transform:uppercase; letter-spacing:.08em; font-size:.72rem !important; }
-.pricing-price{ color:var(--exa-primary) !important; font-weight:800 !important; }
-.pricing-details p{ color:var(--exa-muted) !important; }
+.pricing-box.pricing-box-simple .pricing-content .pricing-price{ color:#ffffff !important; }
+.pricing-unity .price-title{ color:var(--exa-muted) !important; text-transform:uppercase; letter-spacing:.08em; font-size:.72rem !important; }
+.pricing-unity .pricing-price{ color:var(--exa-primary) !important; font-weight:800 !important; }
+.pricing-unity .pricing-details p{ color:var(--exa-muted) !important; }
 
 /* Plan destacado */
 .pricing-box.featured{
