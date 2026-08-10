@@ -13,3 +13,6 @@ error_log
 # Archivos temporales del sistema.
 .DS_Store
 Thumbs.db
+
+# Export de entrenamiento (no publicar en la web)
+centrodeayuda_entrenamiento.txt
