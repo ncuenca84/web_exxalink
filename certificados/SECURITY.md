@@ -42,12 +42,16 @@ con contraseñas cifradas (`password_hash`).
 > datos**: no hay que recrearlas. Lo único nuevo es la tabla `usuarios`.
 
 ```bash
-# 1) Crear SOLO la tabla nueva de usuarios (no toca `certificados`):
+# 1) Crear las tablas nuevas (no tocan `certificados`):
 mysql -u exxa_certificados -p exxa_certificados < db/usuarios.sql
+mysql -u exxa_certificados -p exxa_certificados < db/intentos_login.sql
 
 # 2) Crear el administrador (contraseña de 10+ caracteres):
 php tools/crear_admin.php admin 'UNA_CLAVE_FUERTE_NUEVA'
 ```
+
+> La tabla `intentos_login` habilita el bloqueo por IP tras varios intentos
+> fallidos. Si no la creas, el login sigue funcionando pero sin ese bloqueo.
 
 `crear_admin.php` solo se ejecuta por línea de comandos (bloqueado por web).
 (`db/schema.sql` contiene el esquema completo por referencia y es idempotente,

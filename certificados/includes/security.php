@@ -69,6 +69,16 @@ function e(?string $valor): string
 }
 
 /**
+ * IP del cliente (para limitar intentos de acceso).
+ * Se usa REMOTE_ADDR por ser la única fuente no falsificable por el cliente.
+ */
+function cliente_ip(): string
+{
+    $ip = $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+    return filter_var($ip, FILTER_VALIDATE_IP) ? $ip : '0.0.0.0';
+}
+
+/**
  * Cabeceras de seguridad HTTP para todas las páginas del sistema.
  */
 function cabeceras_seguridad(): void

@@ -26,3 +26,10 @@ CREATE TABLE IF NOT EXISTS usuarios (
     clave_hash VARCHAR(255) NOT NULL,
     creado_en  TIMESTAMP    DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Intentos de acceso por IP (anti fuerza bruta).
+CREATE TABLE IF NOT EXISTS intentos_login (
+    ip       VARCHAR(45) NOT NULL PRIMARY KEY,
+    intentos INT         NOT NULL DEFAULT 0,
+    ultimo   INT         NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

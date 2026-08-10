@@ -19,16 +19,37 @@ if (!empty($_SESSION['admin'])) {
 
 const MAX_INTENTOS     = 5;    // intentos antes del bloqueo
 const BLOQUEO_SEGUNDOS = 900;  // 15 minutos
+// Hash "señuelo" (bcrypt válido) para que el login tarde lo mismo exista o no
+// el usuario, evitando la enumeración de usuarios por tiempo de respuesta.
+const HASH_SENUELO = '$2y$12$Pay1jExYS2KkEJekgRJR/OdqPJIe8t1FL98f0Dpk0Gg6cYlEMqsbm';
 
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // --- Control de fuerza bruta (por sesión) ---
-    $intentos    = $_SESSION['login_intentos'] ?? 0;
-    $ultimoFallo = $_SESSION['login_ultimo'] ?? 0;
+    require __DIR__ . '/../conexion.php';
+    $ip = cliente_ip();
 
-    if ($intentos >= MAX_INTENTOS && (time() - $ultimoFallo) < BLOQUEO_SEGUNDOS) {
-        $restante = (int) ceil((BLOQUEO_SEGUNDOS - (time() - $ultimoFallo)) / 60);
+    // --- Control de fuerza bruta por IP (almacén persistente) ---
+    $ipIntentos = 0; $ipUltimo = 0;
+    try {
+        $q = $conexion->prepare('SELECT intentos, ultimo FROM intentos_login WHERE ip = ? LIMIT 1');
+        $q->bind_param('s', $ip);
+        $q->execute();
+        if ($r = $q->get_result()->fetch_assoc()) {
+            $ipIntentos = (int) $r['intentos'];
+            $ipUltimo   = (int) $r['ultimo'];
+        }
+        $q->close();
+    } catch (\Throwable $e) {
+        // Si la tabla no existe aún, no rompemos el login (solo se pierde el
+        // throttle hasta ejecutar db/intentos_login.sql).
+        error_log('intentos_login no disponible: ' . $e->getMessage());
+    }
+
+    $bloqueado = $ipIntentos >= MAX_INTENTOS && (time() - $ipUltimo) < BLOQUEO_SEGUNDOS;
+
+    if ($bloqueado) {
+        $restante = (int) ceil((BLOQUEO_SEGUNDOS - (time() - $ipUltimo)) / 60);
         $error = "Demasiados intentos fallidos. Espere {$restante} minuto(s).";
     } elseif (!csrf_validar($_POST['csrf'] ?? null)) {
         $error = 'Sesión expirada. Recargue la página e intente de nuevo.';
@@ -36,7 +57,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $usuario = trim((string) ($_POST['usuario'] ?? ''));
         $clave   = (string) ($_POST['clave'] ?? '');
 
-        require __DIR__ . '/../conexion.php';
         $stmt = $conexion->prepare(
             'SELECT id, usuario, clave_hash FROM usuarios WHERE usuario = ? LIMIT 1'
         );
@@ -45,10 +65,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $fila = $stmt->get_result()->fetch_assoc();
         $stmt->close();
 
-        if ($fila && password_verify($clave, $fila['clave_hash'])) {
+        // Verificación de tiempo constante: si no hay usuario, se compara igual
+        // contra un hash señuelo para que la respuesta tarde lo mismo.
+        $ok = $fila
+            ? password_verify($clave, $fila['clave_hash'])
+            : (password_verify($clave, HASH_SENUELO) && false);
+
+        if ($ok) {
             // Éxito: renovar id de sesión (previene fijación de sesión).
             session_regenerate_id(true);
-            unset($_SESSION['login_intentos'], $_SESSION['login_ultimo']);
+            // Limpiar el contador de intentos de esta IP.
+            try {
+                $del = $conexion->prepare('DELETE FROM intentos_login WHERE ip = ?');
+                $del->bind_param('s', $ip);
+                $del->execute();
+                $del->close();
+            } catch (\Throwable $e) { /* tabla ausente: ignorar */ }
+
             $_SESSION['admin']          = true;
             $_SESSION['usuario_id']     = (int) $fila['id'];
             $_SESSION['usuario_nombre'] = $fila['usuario'];
@@ -66,9 +99,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         }
 
-        // Fallo: mensaje genérico (no revela si el usuario existe).
-        $_SESSION['login_intentos'] = $intentos + 1;
-        $_SESSION['login_ultimo']   = time();
+        // Fallo: registrar intento por IP (reinicia el contador si expiró la ventana).
+        $ahora = time();
+        try {
+            $ins = $conexion->prepare(
+                'INSERT INTO intentos_login (ip, intentos, ultimo) VALUES (?, 1, ?)
+                 ON DUPLICATE KEY UPDATE
+                   intentos = IF(? - ultimo >= ' . BLOQUEO_SEGUNDOS . ', 1, intentos + 1),
+                   ultimo = ?'
+            );
+            $ins->bind_param('siii', $ip, $ahora, $ahora, $ahora);
+            $ins->execute();
+            $ins->close();
+        } catch (\Throwable $e) { /* tabla ausente: ignorar */ }
+
+        // Mensaje genérico (no revela si el usuario existe).
         $error = 'Credenciales incorrectas.';
     }
 }
