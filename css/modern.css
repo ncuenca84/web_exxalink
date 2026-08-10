@@ -193,6 +193,39 @@ body{
   #header-holder #nav .navbar-nav > li > a{ font-size:17px !important; }
 }
 
+/* ---------- Tarjetas de precios: paleta moderna y suave (todas las páginas) ----
+   Reemplaza los gradientes saturados/oscuros del tema por tonos más claros y
+   armónicos, con buen contraste para el texto blanco. */
+.pricing-box.pricing-box-simple.pricing-color1 .pricing-content .pricing-head:before{ background-image:linear-gradient(120deg,#3aa0f2,#1f7fe0)!important; }
+.pricing-box.pricing-box-simple.pricing-color1 .pricing-content .pricing-link a{ background-color:#1f86e6!important; }
+.pricing-box.pricing-box-simple.pricing-color1 .pricing-content .pricing-link a:hover,
+.pricing-box.pricing-box-simple.pricing-color1 .pricing-content .pricing-link a:focus{ background-color:#146fd0!important; }
+.pricing-box.pricing-box-simple.pricing-color1 .pricing-content .pricing-details ul li:hover{ color:#1f86e6!important; }
+
+.pricing-box.pricing-box-simple.pricing-color2 .pricing-content .pricing-head:before{ background-image:linear-gradient(120deg,#a78bfa,#7c6cf5)!important; }
+.pricing-box.pricing-box-simple.pricing-color2 .pricing-content .pricing-link a{ background-color:#7c6cf5!important; }
+.pricing-box.pricing-box-simple.pricing-color2 .pricing-content .pricing-link a:hover,
+.pricing-box.pricing-box-simple.pricing-color2 .pricing-content .pricing-link a:focus{ background-color:#6355e6!important; }
+.pricing-box.pricing-box-simple.pricing-color2 .pricing-content .pricing-details ul li:hover{ color:#7c6cf5!important; }
+
+.pricing-box.pricing-box-simple.pricing-color3 .pricing-content .pricing-head:before{ background-image:linear-gradient(120deg,#2fd0a0,#10a98d)!important; }
+.pricing-box.pricing-box-simple.pricing-color3 .pricing-content .pricing-link a{ background-color:#12a98d!important; }
+.pricing-box.pricing-box-simple.pricing-color3 .pricing-content .pricing-link a:hover,
+.pricing-box.pricing-box-simple.pricing-color3 .pricing-content .pricing-link a:focus{ background-color:#0d8f77!important; }
+.pricing-box.pricing-box-simple.pricing-color3 .pricing-content .pricing-details ul li:hover{ color:#12a98d!important; }
+
+.pricing-box.pricing-box-simple.pricing-color4 .pricing-content .pricing-head:before{ background-image:linear-gradient(120deg,#29c3e0,#159fc4)!important; }
+.pricing-box.pricing-box-simple.pricing-color4 .pricing-content .pricing-link a{ background-color:#159fc4!important; }
+.pricing-box.pricing-box-simple.pricing-color4 .pricing-content .pricing-link a:hover,
+.pricing-box.pricing-box-simple.pricing-color4 .pricing-content .pricing-link a:focus{ background-color:#0f83a4!important; }
+.pricing-box.pricing-box-simple.pricing-color4 .pricing-content .pricing-details ul li:hover{ color:#159fc4!important; }
+
+.pricing-box.pricing-box-simple.pricing-color5 .pricing-content .pricing-head:before{ background-image:linear-gradient(120deg,#7c86f5,#5566e8)!important; }
+.pricing-box.pricing-box-simple.pricing-color5 .pricing-content .pricing-link a{ background-color:#5566e8!important; }
+.pricing-box.pricing-box-simple.pricing-color5 .pricing-content .pricing-link a:hover,
+.pricing-box.pricing-box-simple.pricing-color5 .pricing-content .pricing-link a:focus{ background-color:#4453d4!important; }
+.pricing-box.pricing-box-simple.pricing-color5 .pricing-content .pricing-details ul li:hover{ color:#5566e8!important; }
+
 /* ---------- Accesibilidad ---------- */
 a:focus-visible,.ybtn:focus-visible,button:focus-visible{
   outline:3px solid rgba(34,211,238,.55);
